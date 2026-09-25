@@ -1,0 +1,15 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+
+# API Đăng nhập thu nhận userName/password và sinh JWT
+POST    /login                      controllers.AuthController.login(request: Request)
+
+# API Hello World có bảo mật bằng Middleware JWT
+GET     /auth                       controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
